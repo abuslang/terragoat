@@ -229,8 +229,8 @@ resource "azurerm_mssql_server_security_alert_policy" "alertpolicy6" {
     "Sql_Injection",
     "Data_Exfiltration"
   ]
-  retention_days  = 20
-  email_addresses = ["securityengineer@bridgecrew.io"]
+  retention_days       = 20
+  email_addresses      = ["securityengineer@bridgecrew.io"]
   email_account_admins = true
 }
 
@@ -244,7 +244,7 @@ resource "azurerm_mssql_server_security_alert_policy" "alertpolicy7" {
     "Sql_Injection",
     "Data_Exfiltration"
   ]
-  retention_days  = 20
-  email_addresses = ["securityengineer@bridgecrew.io"]
+  retention_days       = 20
+  email_addresses      = ["securityengineer@bridgecrew.io"]
   email_account_admins = true
 }
