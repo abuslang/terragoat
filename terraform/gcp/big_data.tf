@@ -1,6 +1,6 @@
 resource "google_sql_database_instance" "master_instance" {
   name             = "terragoat-${var.environment}-master"
-  database_version = "POSTGRES_11"
+  database_version = true
   region           = var.region
 
   settings {
@@ -13,7 +13,7 @@ resource "google_sql_database_instance" "master_instance" {
       }
     }
     backup_configuration {
-      enabled = false
+      enabled = true
     }
   }
 }
