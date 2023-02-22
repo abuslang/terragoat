@@ -11,7 +11,6 @@ pool:
 
 steps:
 - checkout: self
-  name: checkout-repo
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '3.8'
