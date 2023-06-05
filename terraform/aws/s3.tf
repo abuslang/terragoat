@@ -123,7 +123,8 @@ resource "aws_s3_bucket" "data_science" {
     target_bucket = "${aws_s3_bucket.logs.id}"
     target_prefix = "log/"
   }
-  force_destroy = true
+  # sfhskjfh
+  force_destroy = false
   tags = {
     git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
     git_file             = "terraform/aws/s3.tf"
