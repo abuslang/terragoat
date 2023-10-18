@@ -8,12 +8,12 @@ resource "aws_neptune_cluster" "default" {
   apply_immediately                   = true
   storage_encrypted                   = true
   tags = {
-    git_commit           = "aa8fd16fd94cccf6af206e2f0922b5558f8ac514"
+    git_commit           = "dd742be03ecfcb3e823319a3aeac5a39f8cfe73b"
     git_file             = "terraform/aws/neptune.tf"
-    git_last_modified_at = "2020-08-21 19:14:35"
-    git_last_modified_by = "matt@bridgecrew.io"
-    git_modifiers        = "matt"
-    git_org              = "bridgecrewio"
+    git_last_modified_at = "2023-10-18 16:47:49"
+    git_last_modified_by = "asquadri1@gmail.com"
+    git_modifiers        = "asquadri1/matt/nimrodkor"
+    git_org              = "abuslang"
     git_repo             = "terragoat"
     yor_trace            = "0d4cbb85-73ed-4ca0-b1da-296e4185f34e"
     yor_name             = "default"
