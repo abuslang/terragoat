@@ -15,12 +15,12 @@ resource "aws_elasticsearch_domain" "monitoring-framework" {
     volume_size = 30
   }
   tags = {
-    git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
+    git_commit           = "99d3535da6c2e07a42738f4ceb2f792c42a80084"
     git_file             = "terraform/aws/es.tf"
-    git_last_modified_at = "2020-06-16 14:46:24"
-    git_last_modified_by = "nimrodkor@gmail.com"
-    git_modifiers        = "nimrodkor"
-    git_org              = "bridgecrewio"
+    git_last_modified_at = "2023-11-17 14:55:50"
+    git_last_modified_by = "asquadri1@gmail.com"
+    git_modifiers        = "asquadri1/nimrodkor"
+    git_org              = "abuslang"
     git_repo             = "terragoat"
     yor_trace            = "95131dec-d7c9-49bb-9aff-eb0e2736603b"
     yor_name             = "monitoring-framework"
