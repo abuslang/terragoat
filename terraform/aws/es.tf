@@ -19,7 +19,7 @@ resource "aws_elasticsearch_domain" "monitoring-framework" {
     git_file             = "terraform/aws/es.tf"
     git_last_modified_at = "2023-11-17 14:55:50"
     git_last_modified_by = "asquadri1@gmail.com"
-    git_modifiers        = "asquadri1/nimrodkor"
+    git_modifiers        = "asquadri1/guetaaviv/nimrodkor"
     git_org              = "abuslang"
     git_repo             = "terragoat"
     yor_trace            = "95131dec-d7c9-49bb-9aff-eb0e2736603b"
