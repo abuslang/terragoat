@@ -11,6 +11,7 @@ data aws_iam_policy_document "iam_policy_eks" {
     principals {
       type        = "Service"
       identifiers = ["eks.amazonaws.com"]
+
     }
   }
 }
