@@ -14,7 +14,6 @@ resource azurerm_linux_virtual_machine "linux_machine" {
   network_interface_ids           = [azurerm_network_interface.ni_linux.id]
   resource_group_name             = azurerm_resource_group.example.name
   size                            = "Standard_F2"
-  disable_password_authentication = false
   source_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
@@ -41,6 +40,7 @@ resource azurerm_linux_virtual_machine "linux_machine" {
     }, {
     yor_name = "linux_machine"
   })
+  allow_extension_operations = false
 }
 
 resource azurerm_windows_virtual_machine "windows_machine" {
@@ -78,4 +78,6 @@ resource azurerm_windows_virtual_machine "windows_machine" {
     }, {
     yor_name = "windows_machine"
   })
+  encryption_at_host_enabled = true
+  allow_extension_operations = false
 }

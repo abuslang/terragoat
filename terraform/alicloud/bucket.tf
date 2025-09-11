@@ -16,4 +16,10 @@ resource "alicloud_oss_bucket" "bad_bucket" {
     yor_trace            = "80373049-248d-4f5e-9d25-740c3e80f2b9"
     yor_name             = "bad_bucket"
   }
+  versioning {
+    status = "Enabled"
+  }
+  transfer_acceleration {
+    enabled = true
+  }
 }

@@ -28,4 +28,6 @@ resource "alicloud_db_instance" "seeme" {
     yor_trace            = "7bd1394e-0a79-4288-8f83-5abcca5bf1ba"
     yor_name             = "seeme"
   }
+  auto_upgrade_minor_version = "Auto"
+  ssl_action = true
 }

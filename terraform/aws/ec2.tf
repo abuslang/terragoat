@@ -31,6 +31,8 @@ EOF
     }, {
     yor_name = "web_host"
   })
+  ebs_optimized = true
+  monitoring = true
 }
 
 resource "aws_ebs_volume" "web_host_storage" {
@@ -145,7 +147,6 @@ resource "aws_subnet" "web_subnet" {
   vpc_id                  = aws_vpc.web_vpc.id
   cidr_block              = "172.16.10.0/24"
   availability_zone       = "${var.region}a"
-  map_public_ip_on_launch = true
 
   tags = merge({
     Name = "${local.resource_prefix.value}-subnet"
@@ -167,7 +168,6 @@ resource "aws_subnet" "web_subnet2" {
   vpc_id                  = aws_vpc.web_vpc.id
   cidr_block              = "172.16.11.0/24"
   availability_zone       = "${var.region}b"
-  map_public_ip_on_launch = true
 
   tags = merge({
     Name = "${local.resource_prefix.value}-subnet2"
@@ -308,6 +308,39 @@ resource "aws_s3_bucket" "flowbucket" {
     }, {
     yor_name = "flowbucket"
   })
+}
+
+
+resource "aws_s3_bucket_versioning" "flowbucket" {
+  bucket = aws_s3_bucket.flowbucket.id
+
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
+
+
+resource "aws_s3_bucket" "flowbucket_log_bucket" {
+  bucket = "flowbucket-log-bucket"
+}
+
+resource "aws_s3_bucket_logging" "flowbucket" {
+  bucket = aws_s3_bucket.flowbucket.id
+
+  target_bucket = aws_s3_bucket.flowbucket_log_bucket.id
+  target_prefix = "log/"
+}
+
+
+resource "aws_s3_bucket_server_side_encryption_configuration" "flowbucket" {
+  bucket = aws_s3_bucket.flowbucket.bucket
+
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm     = "aws:kms"
+    }
+  }
 }
 
 output "ec2_public_dns" {

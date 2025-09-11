@@ -25,6 +25,15 @@ resource "aws_elasticsearch_domain" "monitoring-framework" {
     yor_trace            = "95131dec-d7c9-49bb-9aff-eb0e2736603b"
     yor_name             = "monitoring-framework"
   }
+  domain_endpoint_options {
+    tls_security_policy = "Policy-Min-TLS-1-2-2019-07"
+  }
+  encrypt_at_rest {
+    enabled = true
+  }
+  log_publishing_options {
+    cloudwatch_log_group_arn = "CKV_ANY"
+  }
 }
 
 data aws_iam_policy_document "policy" {
