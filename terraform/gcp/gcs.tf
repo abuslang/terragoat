@@ -13,6 +13,10 @@ resource "google_storage_bucket" "terragoat_website" {
     yor_trace            = "bd00cd2e-f53f-4daf-8d4d-74c47846c1cc"
     yor_name             = "terragoat_website"
   }
+  uniform_bucket_level_access = true
+  versioning {
+    enabled = true
+  }
 }
 
 resource "google_storage_bucket_iam_binding" "allow_public_read" {
